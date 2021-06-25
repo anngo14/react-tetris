@@ -1,0 +1,37 @@
+.main-container{
+    padding: 20px;
+    padding-top: 50px;
+    background: url('../../img/bg.png') #000;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+}
+.content{
+    display: flex;
+    justify-content: center;
+}
+.display-container{
+    width: 20vw;
+    padding: 20px;
+}
+.game-over{
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Joystix, Arial, serif;
+    color:red;
+    font-size: 3.5rem;
+}
+.pause-screen{
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: Joystix, Arial, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

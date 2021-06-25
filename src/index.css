@@ -1,0 +1,10 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@font-face{
+  font-family: 'Joystix';
+  src: url('./fonts/joystix\ monospace.ttf') format('truetype');
+}
