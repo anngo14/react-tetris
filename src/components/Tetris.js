@@ -1,11 +1,12 @@
 import { React, useState } from 'react';
-import Grid from './Grid';
-import GeneralDisplay from './GeneralDisplay';
 import { useGrid } from '../hooks/useGrid';
 import { useInterval } from '../hooks/useInterval';
 import { createGrid,  checkCollision, sleep, STAGE_HEIGHT } from '../gameHelpers';
 import { usePlayer } from '../hooks/usePlayer';
 import ActionButton from './ActionButton';
+import Controls from './Controls';
+import GeneralDisplay from './GeneralDisplay';
+import Grid from './Grid';
 import './styles/tetris.css';
 
 export default function Tetris() {
@@ -145,17 +146,19 @@ export default function Tetris() {
                 rotatePlayer(grid, 1);
             //Up Arrow Key
             } else if(keyCode === 38){
-                drop();
-            }
+                drop();    
+            } 
         }
-
-        //Escape Key
-        if(keyCode === 27){
-            setPause(prevPause => !prevPause);
-            if(pause){
-                setDropSpeed();
-            } else{
-                setDropTime(null);
+        
+        if(!gameOver){
+            //Escape Key
+            if(keyCode === 27){
+                setPause(prevPause => !prevPause);
+                if(pause){
+                    setDropSpeed();
+                } else{
+                    setDropTime(null);
+                }
             }
         }
     }
@@ -192,6 +195,7 @@ export default function Tetris() {
                     ) : (
                         <ActionButton text="START" callback={startGame}/>
                     )}
+                    <Controls />
                 </div>
             </div>
         </div>
